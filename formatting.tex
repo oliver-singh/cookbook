@@ -33,6 +33,9 @@
     1 J %  set line cap to rounded ends
     \strip@pt\@tempdimb\space w \strip@pt\@tempdimb\space 0 m %
     \strip@pt\@tempdima\space 0 l S Q }}
+	
+	
+\newcommand{\padshortpara}{\if\prevgraf<2 a\vspace{4\baselineskip}\fi}
 \makeatother
 
 %------------------------------------------------
@@ -100,11 +103,16 @@
     }
 	\setcounter{step}{0}
 }
+
+
 \newcommand{\step}{%
-    \par
+	
+	\ifthenelse{\prevgraf<2}{\vspace{\baselineskip}}{}\par
     \stepcounter{step}  % <-- moved here, since shouldn't be in the argument of lettrine
     \lettrine[%
         lines=2,
+		%grid=true,
+		%novskip=2pt,
         lhang=0,          % space into margin, value between 0 and 1
         loversize=0.1,   % enlarges the height of the capital
         slope=0em,
