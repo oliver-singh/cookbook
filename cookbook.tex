@@ -1,5 +1,5 @@
 \documentclass[%
-a4paper,
+letterpaper,
 %twoside,
 12pt
 ]{extarticle} 
@@ -13,6 +13,8 @@ a4paper,
 \usepackage{nicefrac}
 \usepackage{units}
 \usepackage{xargs}
+\usepackage{xcolor}
+\definecolor{light-gray}{gray}{0.97}
 
 \usepackage{blindtext}    % only needed for generating test text
 \usepackage{array}
@@ -22,12 +24,13 @@ a4paper,
 \usepackage{lettrine}
 \usepackage{wrapfig}
 
-
+\newcommand{\spacestep}{\vspace{\baselineskip}}
 \DeclareRobustCommand{\textcelcius}{\ensuremath{^{\circ}\mathrm{C}}}
 
 \input{formatting}
 
 \begin{document}
+\pagecolor{light-gray}
 %
 %\title{Recipe book}
 %\author{Oliver Singh}
@@ -62,10 +65,12 @@ a4paper,
 \ingredient{}{ Coriander}
 }
 \preperation{
-\step Mix sauce ingredients in bowl.\hfill \phantom{4cm}\hfill\linebreak d
-\step Whisk egg.\hfill\\
-\step Finely chop garlic, ginger and shallot.\hfill \phantom{4cm}
-\step Fry protein until cooked and set aside.\hfill \phantom{4cm}
+\step Mix sauce ingredients in bowl.\spacestep
+
+\step Whisk egg.\spacestep
+
+\step Finely chop garlic, ginger and shallot.
+\step Fry protein until cooked and set aside.
 \step Pour boiling water over the rice noodles and leave to soften for 3 minutes.
 \step Fry garlic, ginger and shallots in a wok in (peanut) oil until golden brown.
 \step Push aside shallot mix and add egg. Scramble into small pieces and mix with the shallot mix.
