@@ -1,0 +1,122 @@
+\documentclass[%
+a4paper,
+%twoside,
+12pt
+]{extarticle} 
+
+\usepackage[landscape, margin=1in]{geometry}
+
+
+% encoding, font, language
+
+\usepackage{multicol}
+\usepackage{nicefrac}
+\usepackage{units}
+\usepackage{xargs}
+
+\usepackage{blindtext}    % only needed for generating test text
+\usepackage{array}
+
+\usepackage{graphicx}
+\usepackage{calc}
+\usepackage{lettrine}
+\usepackage{wrapfig}
+
+
+\DeclareRobustCommand{\textcelcius}{\ensuremath{^{\circ}\mathrm{C}}}
+
+\input{formatting}
+
+\begin{document}
+%
+%\title{Recipe book}
+%\author{Oliver Singh}
+%\maketitle
+%
+%\begin{abstract}
+%Its a cook book.
+%\end{abstract}
+
+\tableofcontents
+\newpage
+\section{Savoury}
+\begin{recipe}{Pad Thai}
+\introduction{This is a recipe to make Pad Thai from scratch. Don't skip the fish sauce!}
+\ingredients{
+\ingredientsubtitle{Sauce}
+\ingredient{\unit[2]{tbsp.}}{Fish sauce}
+\ingredient{\unit[2]{tbsp.}}{Rice Wine vinegar}
+\ingredient{\unit[1]{tsp.}  }{ Soy Sauce}
+\ingredientsubtitle{Stir fry}
+\ingredient{\unit[1]{nest}  }{ Rice noodles}
+\ingredient{1               }{ Large shallot}
+\ingredient{\unit[2]{cloves}}{ Garlic}
+\ingredient{\unit[1]{finger}}{ Ginger}
+\ingredient{}{ Chicken, prawns or tofu}
+\ingredient{0-1			    }{ Birds eye chilli}
+\ingredient{}{beansprouts \optional}
+\ingredient{}{ peanut oil \optional}
+\ingredientsubtitle{Garnish}
+\ingredient{\unit[2]{wedges}}{ Lime}
+\ingredient{}{ Chopped roasted peanuts}
+\ingredient{}{ Coriander}
+}
+\preperation{
+\step Mix sauce ingredients in bowl.\hfill \phantom{4cm}\hfill\linebreak d
+\step Whisk egg.\hfill\\
+\step Finely chop garlic, ginger and shallot.\hfill \phantom{4cm}
+\step Fry protein until cooked and set aside.\hfill \phantom{4cm}
+\step Pour boiling water over the rice noodles and leave to soften for 3 minutes.
+\step Fry garlic, ginger and shallots in a wok in (peanut) oil until golden brown.
+\step Push aside shallot mix and add egg. Scramble into small pieces and mix with the shallot mix.
+\step Add the drained rice noodles and the sauce and and stir fry until soft and the fish sauce has cooked off. Add a little water if the starts to dry out.
+\step Add chopped peanuts, squeeze over lime, add coriander and serve.
+}
+\end{recipe}
+
+% background graphic
+%\setBackgroundPicture[x, y=-2cm, width=\paperwidth-4cm, height, orientation = pagecenter]{pic/background}
+
+
+
+%\begin{recipe}
+%[
+	%preparationtime={\unit[17]{m}}, 
+	%portion ={\portion{1}}
+%]{Pad Thai}
+	%\ingredients[16]{
+		%\ingredientsubtitle{Sauce}\\
+		%\unit[2]{tbsp.} & Fish sauce\\
+			%\unit[2]{tbsp.} & Rice Wine vinegar\\
+			%\unit[1]{tsp.}  & Soy Sauce\\
+		%\ingredientsubtitle{Stir fry}\\
+			%\unit[1]{nest}  & Rice noodles\\
+			%1               & Large shallot\\
+			%\unit[2]{cloves}& Garlic\\
+			%\unit[1]{finger}& Ginger\\
+			                %& Chicken, prawns or tofu\\
+			%0-1			    & Birds eye chilli\\
+							%& beansprouts \optional \\
+							%& peanut oil \optional\\
+		%\ingredientsubtitle{Garnish}\\
+			%\unit[2]{wedges}& Lime\\
+			                %& Chopped roasted peanuts\\
+							%& Coriander
+		%}
+	%\preparation{
+	%\begin{enumerate}
+		%\item Mix sauce ingredients in bowl.
+		%\item Whisk \ingredient{egg}.
+		%\item Finely chop \ingredient{garlic}, \ingredient{ginger} and \ingredient{shallot}.
+		%\item Fry protein until cooked and set aside.
+		%\item Pour boiling water over the rice noodles and leave to soften for 3 minutes.
+		%\item Fry \ingredient{garlic}, \ingredient{ginger} and \ingredient{shallot} in a wok in (peanut) oil until golden brown.
+		%\item Push aside shallot mix and add egg. Scramble into small pieces and mix with the shallot mix.
+		%\item Add the drained rice noodles and the sauce and and stir fry until soft and the fish sauce has cooked off. Add a little water if the starts to dry out.
+		%\item Add chopped peanuts, squeeze over lime, add coriander and serve.
+	%\end{enumerate}
+		%}
+%\end{recipe}
+
+%\include{tex/Mousse_au_Chocolat}
+\end{document}
