@@ -83,7 +83,7 @@
 \newcommand{\ingredientsubtitle}[1]
 {
 & \\[\dimexpr-\normalbaselineskip+0.5ex]
-\multicolumn{2}{@{}l@{}}{\bf #1} \\
+\multicolumn{2}{@{}p{0.9\linewidth}@{}}{\bf #1} \\
 }
 
 \newcommand{\optional}
@@ -123,6 +123,18 @@
 
 
 %------------------------------------------------
+%  portions, cooking time, oven preheat, etc
+%------------------------------------------------
+\newcommand{\portions}[1]
+{% Introduction before the preparation and ingredients
+    \def\cookportions
+    {
+	#1
+    }
+}
+
+
+%------------------------------------------------
 %   Recipes
 %------------------------------------------------
 
@@ -130,6 +142,7 @@
 \def\cookintroduction{}
 \def\cookingredients{}
 \def\cookpreperation{}
+\def\cookportions{}
 
 \def\cookrecipetitle{#1}
 }
@@ -142,7 +155,6 @@
 \cookintroduction
 %\begin{tabular}{@{}l l@{}}
 \begin{multicols}{3}
-	
 \cookingredients{}
 \columnbreak
 \cookpreperation{}
@@ -151,3 +163,4 @@
 
 \widowpenalties 1 10000
 \raggedbottom
+
