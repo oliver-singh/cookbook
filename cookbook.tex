@@ -14,10 +14,12 @@ letterpaper,
 \usepackage{units}
 \usepackage{xargs}
 \usepackage{xcolor}
+
 \definecolor{light-gray}{gray}{0.93}
 
 \usepackage{blindtext}    % only needed for generating test text
 \usepackage{array}
+\usepackage{textcomp}
 
 \usepackage{graphicx}
 \usepackage{calc}
@@ -27,7 +29,10 @@ letterpaper,
 \renewcommand*{\multicolumntoc}{3}
 
 \newcommand{\spacestep}{\vspace{\baselineskip}}
-\DeclareRobustCommand{\textcelcius}{\ensuremath{^{\circ}\mathrm{C}}}
+\DeclareRobustCommand{\textcelcius}{\textdegree\textrm{C}}
+
+\newcommand{\optional}
+{(\textit{optional})}
 
 \input{formatting}
 
@@ -53,6 +58,9 @@ letterpaper,
 \newpage
 \input{recipes/dhal}
 \input{recipes/padthai}
+\newpage
+\section{Pudding}
+\input{recipes/galette}
 %\input{recipes/goodrice}
 %\input{recipes/laksa} % check the guardian version
 %\input{recipes/thairedcurry}

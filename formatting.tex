@@ -66,7 +66,7 @@
 \newcommand{\ingredients}[1]
 {% Introduction before the preparation and ingredients
     \def\cookingredients
-    {
+    {\noindent
 	\begin{tabular}{@{}r p{3.8cm}@{}}
 	\multicolumn{2}{@{}l@{}}{\large\bf Ingredients}\\[1ex]
 	#1
@@ -86,10 +86,7 @@
 \multicolumn{2}{@{}p{0.9\linewidth}@{}}{\bf #1} \\
 }
 
-\newcommand{\optional}
-{
-(\textit{optional})
-}
+
 
 %------------------------------------------------
 %   Preperation
@@ -125,24 +122,41 @@
 %------------------------------------------------
 %  portions, cooking time, oven preheat, etc
 %------------------------------------------------
-\newcommand{\portions}[1]
+\newboolean{cookportionsdefined} 
+
+\newcommand{\serves}[1]
 {% Introduction before the preparation and ingredients
     \def\cookportions
     {
-	#1
-    }
+	\noindent \textit{Serves #1}\newline
+	}
+	\setboolean{cookportionsdefined}{true}
 }
 
+
+\newboolean{cookoventempdefined}
+
+\newcommand{\oventemp}[2][]
+{% Introduction before the preparation and ingredients
+    \def\cookoventemp
+    {
+	\noindent \textit{Oven \unit{#2}{\textcelcius}
+	\ifthenelse{\equal{#1}{}}{}{(#1\textcelcius~fan)}}\newline
+    }
+	\setboolean{cookoventempdefined}{true}
+}
 
 %------------------------------------------------
 %   Recipes
 %------------------------------------------------
-
 \newenvironment{recipe}[1]{
 \def\cookintroduction{}
 \def\cookingredients{}
 \def\cookpreperation{}
 \def\cookportions{}
+\def\cookoventemp{}
+\setboolean{cookportionsdefined}{false}
+\setboolean{cookoventempdefined}{false}
 
 \def\cookrecipetitle{#1}
 }
@@ -155,6 +169,10 @@
 \cookintroduction
 %\begin{tabular}{@{}l l@{}}
 \begin{multicols}{3}
+\cookportions{}
+\cookoventemp{}
+\ifthenelse{\boolean{cookportionsdefined}\or\boolean{cookoventempdefined}}
+{\phantom{k}\vspace{-0cm}\newline}{}
 \cookingredients{}
 \columnbreak
 \cookpreperation{}
